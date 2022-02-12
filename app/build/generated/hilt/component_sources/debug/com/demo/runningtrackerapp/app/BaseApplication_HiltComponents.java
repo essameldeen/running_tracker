@@ -1,7 +1,13 @@
 package com.demo.runningtrackerapp.app;
 
 import com.demo.runningtrackerapp.MainActivity_GeneratedInjector;
-import com.demo.runningtrackerapp.di.AppModule;
+import com.demo.runningtrackerapp.presentation.main.MainFragment_GeneratedInjector;
+import com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules;
+import com.demo.runningtrackerapp.presentation.settings.SettingFragment_GeneratedInjector;
+import com.demo.runningtrackerapp.presentation.setup.SetupFragment_GeneratedInjector;
+import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment_GeneratedInjector;
+import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules;
+import com.demo.runningtrackerapp.presentation.tracking.TrackingFragment_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -145,7 +151,9 @@ public final class BaseApplication_HiltComponents {
       modules = {
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
-          HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class
+          HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
+          MainViewModel_HiltModules.KeyModule.class,
+          StatisticsViewModel_HiltModules.KeyModule.class
       }
   )
   @ActivityRetainedScoped
@@ -180,7 +188,11 @@ public final class BaseApplication_HiltComponents {
   }
 
   @Subcomponent(
-      modules = HiltWrapper_HiltViewModelFactory_ViewModelModule.class
+      modules = {
+          HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          MainViewModel_HiltModules.BindsModule.class,
+          StatisticsViewModel_HiltModules.BindsModule.class
+      }
   )
   @ViewModelScoped
   public abstract static class ViewModelC implements ViewModelComponent,
@@ -204,7 +216,12 @@ public final class BaseApplication_HiltComponents {
       modules = ViewWithFragmentCBuilderModule.class
   )
   @FragmentScoped
-  public abstract static class FragmentC implements FragmentComponent,
+  public abstract static class FragmentC implements MainFragment_GeneratedInjector,
+      SettingFragment_GeneratedInjector,
+      SetupFragment_GeneratedInjector,
+      StatisticsFragment_GeneratedInjector,
+      TrackingFragment_GeneratedInjector,
+      FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,
       GeneratedComponent {

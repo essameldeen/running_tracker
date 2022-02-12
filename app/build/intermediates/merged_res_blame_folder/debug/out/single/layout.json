@@ -1,5 +1,29 @@
 [
     {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_main.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_main.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_tracking.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_tracking.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_setups.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_setups.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_staticitics.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_staticitics.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_settings.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_run.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\item_run.xml"
+    },
+    {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\activity_main.xml"
     }

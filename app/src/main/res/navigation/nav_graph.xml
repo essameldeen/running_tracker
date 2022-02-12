@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/setupFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.demo.runningtrackerapp.presentation.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/navigate_to_trackingFragment"
+            app:destination="@id/trackingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.demo.runningtrackerapp.presentation.settings.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment"
+        android:label="StatisticsFragment" />
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.demo.runningtrackerapp.presentation.tracking.TrackingFragment"
+        android:label="TrackingFragment" >
+        <action
+            android:id="@+id/navigate_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="com.demo.runningtrackerapp.presentation.setup.SetupFragment"
+        android:label="SetupFragment" >
+        <action
+            android:id="@+id/navigate_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

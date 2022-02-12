@@ -8,12 +8,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 import com.demo.runningtrackerapp.MainActivity;
-import com.demo.runningtrackerapp.MainActivity_MembersInjector;
-import com.demo.runningtrackerapp.data.DataBase;
+import com.demo.runningtrackerapp.data.db.DataBase;
 import com.demo.runningtrackerapp.data.db.RunDao;
-import com.demo.runningtrackerapp.di.AppModule;
-import com.demo.runningtrackerapp.di.AppModule_ProvideDaoFactory;
-import com.demo.runningtrackerapp.di.AppModule_ProvideDataBaseInstanceFactory;
+import com.demo.runningtrackerapp.presentation.main.MainFragment;
+import com.demo.runningtrackerapp.presentation.main.MainViewModel;
+import com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.demo.runningtrackerapp.presentation.settings.SettingFragment;
+import com.demo.runningtrackerapp.presentation.setup.SetupFragment;
+import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment;
+import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel;
+import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.demo.runningtrackerapp.presentation.tracking.TrackingFragment;
+import com.demo.runningtrackerapp.repository.MainRepo;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
@@ -31,7 +37,9 @@ import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideAppl
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.DoubleCheck;
+import dagger.internal.MapBuilder;
 import dagger.internal.Preconditions;
+import dagger.internal.SetBuilder;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
@@ -50,6 +58,8 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
   private Provider<DataBase> provideDataBaseInstanceProvider;
 
   private Provider<RunDao> provideDaoProvider;
+
+  private Provider<MainRepo> provideRunRepoProvider;
 
   private DaggerBaseApplication_HiltComponents_SingletonC(
       ApplicationContextModule applicationContextModuleParam) {
@@ -70,10 +80,15 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     return AppModule_ProvideDaoFactory.provideDao(provideDataBaseInstanceProvider.get());
   }
 
+  private MainRepo mainRepo() {
+    return AppModule_ProvideRunRepoFactory.provideRunRepo(provideDaoProvider.get());
+  }
+
   @SuppressWarnings("unchecked")
   private void initialize(final ApplicationContextModule applicationContextModuleParam) {
-    this.provideDataBaseInstanceProvider = DoubleCheck.provider(new SwitchingProvider<DataBase>(singletonC, 1));
-    this.provideDaoProvider = DoubleCheck.provider(new SwitchingProvider<RunDao>(singletonC, 0));
+    this.provideDataBaseInstanceProvider = DoubleCheck.provider(new SwitchingProvider<DataBase>(singletonC, 2));
+    this.provideDaoProvider = DoubleCheck.provider(new SwitchingProvider<RunDao>(singletonC, 1));
+    this.provideRunRepoProvider = DoubleCheck.provider(new SwitchingProvider<MainRepo>(singletonC, 0));
   }
 
   @Override
@@ -352,6 +367,26 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     }
 
     @Override
+    public void injectMainFragment(MainFragment mainFragment) {
+    }
+
+    @Override
+    public void injectSettingFragment(SettingFragment settingFragment) {
+    }
+
+    @Override
+    public void injectSetupFragment(SetupFragment setupFragment) {
+    }
+
+    @Override
+    public void injectStatisticsFragment(StatisticsFragment statisticsFragment) {
+    }
+
+    @Override
+    public void injectTrackingFragment(TrackingFragment trackingFragment) {
+    }
+
+    @Override
     public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
       return activityCImpl.getHiltInternalFactoryFactory();
     }
@@ -398,17 +433,16 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public void injectMainActivity(MainActivity mainActivity) {
-      injectMainActivity2(mainActivity);
     }
 
     @Override
     public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
-      return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(ApplicationContextModule_ProvideApplicationFactory.provideApplication(singletonC.applicationContextModule), Collections.<String>emptySet(), new ViewModelCBuilder(singletonC, activityRetainedCImpl));
+      return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(ApplicationContextModule_ProvideApplicationFactory.provideApplication(singletonC.applicationContextModule), getViewModelKeys(), new ViewModelCBuilder(singletonC, activityRetainedCImpl));
     }
 
     @Override
     public Set<String> getViewModelKeys() {
-      return Collections.<String>emptySet();
+      return SetBuilder.<String>newSetBuilder(2).add(MainViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(StatisticsViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
     }
 
     @Override
@@ -425,11 +459,6 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     public ViewComponentBuilder viewComponentBuilder() {
       return new ViewCBuilder(singletonC, activityRetainedCImpl, activityCImpl);
     }
-
-    private MainActivity injectMainActivity2(MainActivity instance) {
-      MainActivity_MembersInjector.injectDao(instance, singletonC.provideDaoProvider.get());
-      return instance;
-    }
   }
 
   private static final class ViewModelCImpl extends BaseApplication_HiltComponents.ViewModelC {
@@ -439,17 +468,68 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     private final ViewModelCImpl viewModelCImpl = this;
 
+    private Provider<MainViewModel> mainViewModelProvider;
+
+    private Provider<StatisticsViewModel> statisticsViewModelProvider;
+
     private ViewModelCImpl(DaggerBaseApplication_HiltComponents_SingletonC singletonC,
         ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam) {
       this.singletonC = singletonC;
       this.activityRetainedCImpl = activityRetainedCImpl;
 
+      initialize(savedStateHandleParam);
 
+    }
+
+    private MainViewModel mainViewModel() {
+      return new MainViewModel(singletonC.provideRunRepoProvider.get());
+    }
+
+    private StatisticsViewModel statisticsViewModel() {
+      return new StatisticsViewModel(singletonC.provideRunRepoProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandle savedStateHandleParam) {
+      this.mainViewModelProvider = new SwitchingProvider<>(singletonC, activityRetainedCImpl, viewModelCImpl, 0);
+      this.statisticsViewModelProvider = new SwitchingProvider<>(singletonC, activityRetainedCImpl, viewModelCImpl, 1);
     }
 
     @Override
     public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-      return Collections.<String, Provider<ViewModel>>emptyMap();
+      return MapBuilder.<String, Provider<ViewModel>>newMapBuilder(2).put("com.demo.runningtrackerapp.presentation.main.MainViewModel", (Provider) mainViewModelProvider).put("com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel", (Provider) statisticsViewModelProvider).build();
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final DaggerBaseApplication_HiltComponents_SingletonC singletonC;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final ViewModelCImpl viewModelCImpl;
+
+      private final int id;
+
+      SwitchingProvider(DaggerBaseApplication_HiltComponents_SingletonC singletonC,
+          ActivityRetainedCImpl activityRetainedCImpl, ViewModelCImpl viewModelCImpl, int id) {
+        this.singletonC = singletonC;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.viewModelCImpl = viewModelCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.demo.runningtrackerapp.presentation.main.MainViewModel 
+          return (T) viewModelCImpl.mainViewModel();
+
+          case 1: // com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel 
+          return (T) viewModelCImpl.statisticsViewModel();
+
+          default: throw new AssertionError(id);
+        }
+      }
     }
   }
 
@@ -537,10 +617,13 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     @Override
     public T get() {
       switch (id) {
-        case 0: // com.demo.runningtrackerapp.data.db.RunDao 
+        case 0: // com.demo.runningtrackerapp.repository.MainRepo 
+        return (T) singletonC.mainRepo();
+
+        case 1: // com.demo.runningtrackerapp.data.db.RunDao 
         return (T) singletonC.runDao();
 
-        case 1: // com.demo.runningtrackerapp.data.DataBase 
+        case 2: // com.demo.runningtrackerapp.data.db.DataBase 
         return (T) singletonC.dataBase();
 
         default: throw new AssertionError(id);
