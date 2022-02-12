@@ -1,0 +1,120 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.demo.runningtrackerapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
+10
+11    <!-- Include required permissions for Google Maps API to run. -->
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+12-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
+13-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:22-64
+14
+15    <uses-feature
+15-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+16        android:glEsVersion="0x00020000"
+16-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+17        android:required="true" />
+17-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+18
+19    <application
+19-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:5:5-22:19
+20        android:name="com.demo.runningtrackerapp.app.BaseApplication"
+20-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:6:9-44
+21        android:allowBackup="true"
+21-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:7:9-35
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.7.0] C:\Users\Hp\.gradle\caches\transforms-3\f5c8d1129b22dc42771bc078eadc9e06\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:8:9-43
+25        android:label="@string/app_name"
+25-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:9:9-41
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:10:9-54
+27        android:supportsRtl="true"
+27-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:11:9-35
+28        android:theme="@style/Theme.RunningTrackerApp" >
+28-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:12:9-55
+29        <activity
+29-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:13:9-21:20
+30            android:name="com.demo.runningtrackerapp.MainActivity"
+30-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:14:13-41
+31            android:exported="true" >
+31-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:15:13-36
+32            <intent-filter>
+32-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:16:13-20:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:17:17-69
+33-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:17:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:19:17-77
+35-->E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:19:27-74
+36            </intent-filter>
+37        </activity>
+38        <!-- Needs to be explicitly declared on P+ -->
+39        <uses-library
+39-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+40            android:name="org.apache.http.legacy"
+40-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+41            android:required="false" />
+41-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+42
+43        <activity
+43-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\04dd5a6a6840d3e6aeb1b9817841c46d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+44            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+44-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\04dd5a6a6840d3e6aeb1b9817841c46d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+45            android:exported="false"
+45-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\04dd5a6a6840d3e6aeb1b9817841c46d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+46            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+46-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\04dd5a6a6840d3e6aeb1b9817841c46d\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+47
+48        <meta-data
+48-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+49            android:name="com.google.android.gms.version"
+49-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+50            android:value="@integer/google_play_services_version" />
+50-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+51
+52        <service
+52-->[androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transforms-3\94aa9c1e2c73b9ee3ee59d4a8f7742a3\transformed\room-runtime-2.4.1\AndroidManifest.xml:25:9-28:40
+53            android:name="androidx.room.MultiInstanceInvalidationService"
+53-->[androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transforms-3\94aa9c1e2c73b9ee3ee59d4a8f7742a3\transformed\room-runtime-2.4.1\AndroidManifest.xml:26:13-74
+54            android:directBootAware="true"
+54-->[androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transforms-3\94aa9c1e2c73b9ee3ee59d4a8f7742a3\transformed\room-runtime-2.4.1\AndroidManifest.xml:27:13-43
+55            android:exported="false" />
+55-->[androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transforms-3\94aa9c1e2c73b9ee3ee59d4a8f7742a3\transformed\room-runtime-2.4.1\AndroidManifest.xml:28:13-37
+56
+57        <provider
+57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+58            android:name="androidx.startup.InitializationProvider"
+58-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+59            android:authorities="com.demo.runningtrackerapp.androidx-startup"
+59-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+60            android:exported="false" >
+60-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+61            <meta-data
+61-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+62                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+62-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+63                android:value="androidx.startup" />
+63-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\8371a4b2111b574e2c365abbfeab1387\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+64            <meta-data
+64-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Hp\.gradle\caches\transforms-3\bbcd8f2fec65b8bb236d8de42249f48d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+65-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Hp\.gradle\caches\transforms-3\bbcd8f2fec65b8bb236d8de42249f48d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+66                android:value="androidx.startup" />
+66-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Hp\.gradle\caches\transforms-3\bbcd8f2fec65b8bb236d8de42249f48d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+67        </provider>
+68    </application>
+69
+70</manifest>
