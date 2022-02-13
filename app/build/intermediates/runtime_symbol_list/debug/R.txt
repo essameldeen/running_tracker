@@ -1283,6 +1283,8 @@ int color cardview_shadow_end_color 0x7f06002b
 int color cardview_shadow_start_color 0x7f06002c
 int color checkbox_themeable_attribute_color 0x7f06002d
 int color colorAccent 0x7f06002e
+int color colorPrimary 0x7f060266
+int color colorPrimaryDark 0x7f060267
 int color common_google_signin_btn_text_dark 0x7f06002f
 int color common_google_signin_btn_text_dark_default 0x7f060030
 int color common_google_signin_btn_text_dark_disabled 0x7f060031
@@ -3485,8 +3487,11 @@ int string path_password_eye 0x7f110093
 int string path_password_eye_mask_strike_through 0x7f110094
 int string path_password_eye_mask_visible 0x7f110095
 int string path_password_strike_through 0x7f110096
+int string rationale_ask 0x7f110099
+int string rationale_ask_again 0x7f11009a
 int string search_menu_title 0x7f110097
 int string status_bar_notification_info_overflow 0x7f110098
+int string title_settings_dialog 0x7f11009b
 int style AlertDialog_AppCompat 0x7f120000
 int style AlertDialog_AppCompat_Light 0x7f120001
 int style AlertDialogTheme 0x7f120002
@@ -3765,6 +3770,8 @@ int style Base_Widget_MaterialComponents_TextView 0x7f120112
 int style CardView 0x7f120113
 int style CardView_Dark 0x7f120114
 int style CardView_Light 0x7f120115
+int style EasyPermissions 0x7f1203ff
+int style EasyPermissions_Transparent 0x7f120400
 int style EmptyTheme 0x7f120116
 int style MaterialAlertDialog_Material3 0x7f120117
 int style MaterialAlertDialog_Material3_Body_Text 0x7f120118

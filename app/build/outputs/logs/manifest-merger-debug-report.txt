@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [androidx.databinding:viewbinding:7.0.4] C:\Users\Hp\.gradle\caches\transforms-3\08993e25723fb6577187488cfeaa01e2\transformed\jetified-viewbinding-7.0.4\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] C:\Users\Hp\.gradle\caches\transforms-3\03adfc78eb17a2b0633aadda6f3fd1a1\transformed\navigation-fragment-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\Hp\.gradle\caches\transforms-3\97a601ea07dc9fc954011c63269ccc99\transformed\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:17:1-24:12
@@ -19,11 +19,11 @@ MERGED from [androidx.room:room-ktx:2.4.1] C:\Users\Hp\.gradle\caches\transforms
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\Hp\.gradle\caches\transforms-3\1f512be50510567dfd6864392afbcb45\transformed\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Hp\.gradle\caches\transforms-3\45a7be2a0050b939774da32555a290c5\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Hp\.gradle\caches\transforms-3\8a76586546c83c1afa7df4bc34b74baa\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Hp\.gradle\caches\transforms-3\4cdf4d6837f2b75b16fd6994634961a3\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Hp\.gradle\caches\transforms-3\316947aa3fb2a629b4e23c3884ffdf27\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.dagger:hilt-android:2.40] C:\Users\Hp\.gradle\caches\transforms-3\db4b5440dabdd037b2b9ed616440be9c\transformed\jetified-hilt-android-2.40\AndroidManifest.xml:16:1-19:12
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Hp\.gradle\caches\transforms-3\882149b4eba0c1ec9a07949b304b76cb\transformed\jetified-glide-4.11.0\AndroidManifest.xml:2:1-12:12
-MERGED from [com.github.permissions-dispatcher:permissionsdispatcher:4.8.0] C:\Users\Hp\.gradle\caches\transforms-3\05ec661e29791c542b93f749d5e69ae7\transformed\jetified-permissionsdispatcher-4.8.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\0da5f6ac474d8f5e1e21461f0bf727d6\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.3.5] C:\Users\Hp\.gradle\caches\transforms-3\47f1ecc2a2534cf2343fb0e881479532\transformed\navigation-fragment-2.3.5\AndroidManifest.xml:17:1-24:12
@@ -78,20 +78,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\a57366e33c32c5ccebc3a340118861f6\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Hp\.gradle\caches\transforms-3\e3fa8788c67b6822ecba4d62738aedb7\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.dagger:dagger-lint-aar:2.40] C:\Users\Hp\.gradle\caches\transforms-3\235f99620113dc0057056ded9aa60062\transformed\jetified-dagger-lint-aar-2.40\AndroidManifest.xml:16:1-19:12
-INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
 	package
 		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
-		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
-		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-37:12
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:2:11-69
@@ -112,11 +112,13 @@ ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:8:5-7
 	android:name
 		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:8:22-74
 application
-ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:10:5-35:19
+ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:10:5-38:19
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Hp\.gradle\caches\transforms-3\45a7be2a0050b939774da32555a290c5\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Hp\.gradle\caches\transforms-3\45a7be2a0050b939774da32555a290c5\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Hp\.gradle\caches\transforms-3\8a76586546c83c1afa7df4bc34b74baa\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Hp\.gradle\caches\transforms-3\8a76586546c83c1afa7df4bc34b74baa\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
+MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:11:5-17:19
+MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:11:5-17:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Hp\.gradle\caches\transforms-3\316947aa3fb2a629b4e23c3884ffdf27\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Hp\.gradle\caches\transforms-3\316947aa3fb2a629b4e23c3884ffdf27\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:24:5-25:19
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Hp\.gradle\caches\transforms-3\882149b4eba0c1ec9a07949b304b76cb\transformed\jetified-glide-4.11.0\AndroidManifest.xml:10:5-20
@@ -183,20 +185,26 @@ category#android.intent.category.LAUNCHER
 ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
 		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:25:27-74
-meta-data#com.google.android.gms.version
-ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:29:9-31:69
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-	android:value
-		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:31:13-66
+service#com.demo.runningtrackerapp.utils.TrackingService
+ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:28:9-30:15
+	android:foregroundServiceType
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:29:13-53
 	android:name
-		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:30:13-58
-meta-data#com.google.android.geo.API_KEY
-ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:32:9-34:55
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:28:18-55
+meta-data#com.google.android.gms.version
+ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:32:9-34:69
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\e95aa699fec460aaf5d7699f14a0b07f\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:34:13-52
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:34:13-66
 	android:name
 		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:33:13-58
+meta-data#com.google.android.geo.API_KEY
+ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:35:9-37:55
+	android:value
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:37:13-52
+	android:name
+		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml:36:13-58
 uses-sdk
 INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
@@ -231,6 +239,8 @@ MERGED from [com.google.android.material:material:1.5.0] C:\Users\Hp\.gradle\cac
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Hp\.gradle\caches\transforms-3\45a7be2a0050b939774da32555a290c5\transformed\material-1.5.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Hp\.gradle\caches\transforms-3\8a76586546c83c1afa7df4bc34b74baa\transformed\constraintlayout-2.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Hp\.gradle\caches\transforms-3\8a76586546c83c1afa7df4bc34b74baa\transformed\constraintlayout-2.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Hp\.gradle\caches\transforms-3\4cdf4d6837f2b75b16fd6994634961a3\transformed\appcompat-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Hp\.gradle\caches\transforms-3\4cdf4d6837f2b75b16fd6994634961a3\transformed\appcompat-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\Hp\.gradle\caches\transforms-3\316947aa3fb2a629b4e23c3884ffdf27\transformed\lifecycle-extensions-2.2.0\AndroidManifest.xml:20:5-22:41
@@ -239,8 +249,6 @@ MERGED from [com.google.dagger:hilt-android:2.40] C:\Users\Hp\.gradle\caches\tra
 MERGED from [com.google.dagger:hilt-android:2.40] C:\Users\Hp\.gradle\caches\transforms-3\db4b5440dabdd037b2b9ed616440be9c\transformed\jetified-hilt-android-2.40\AndroidManifest.xml:18:3-42
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Hp\.gradle\caches\transforms-3\882149b4eba0c1ec9a07949b304b76cb\transformed\jetified-glide-4.11.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.11.0] C:\Users\Hp\.gradle\caches\transforms-3\882149b4eba0c1ec9a07949b304b76cb\transformed\jetified-glide-4.11.0\AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.permissions-dispatcher:permissionsdispatcher:4.8.0] C:\Users\Hp\.gradle\caches\transforms-3\05ec661e29791c542b93f749d5e69ae7\transformed\jetified-permissionsdispatcher-4.8.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.permissions-dispatcher:permissionsdispatcher:4.8.0] C:\Users\Hp\.gradle\caches\transforms-3\05ec661e29791c542b93f749d5e69ae7\transformed\jetified-permissionsdispatcher-4.8.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\0da5f6ac474d8f5e1e21461f0bf727d6\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -359,6 +367,16 @@ INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 		ADDED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
 		INJECTED from E:\smartzone\runningTrackerApp\app\src\main\AndroidManifest.xml
+activity#pub.devrel.easypermissions.AppSettingsDialogHolderActivity
+ADDED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:12:9-16:66
+	android:label
+		ADDED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:15:13-29
+	android:exported
+		ADDED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:14:13-37
+	android:theme
+		ADDED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:16:13-63
+	android:name
+		ADDED from [pub.devrel:easypermissions:3.0.0] C:\Users\Hp\.gradle\caches\transforms-3\48e5b12c62bbc29562d058073e76f775\transformed\jetified-easypermissions-3.0.0\AndroidManifest.xml:13:13-86
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Hp\.gradle\caches\transforms-3\027c67e218358a2c0cfd03e43ee94c2c\transformed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
 	android:name

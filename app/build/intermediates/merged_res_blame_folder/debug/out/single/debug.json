@@ -60,12 +60,12 @@
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\layout_item_run.xml.flat",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\item_run.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_staticitics.xml.flat",
@@ -100,12 +100,12 @@
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_nav_selector.xml.flat",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\drawable\\bottom_nav_selector.xml"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_setups.xml.flat",
