@@ -2565,7 +2565,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_paus_black
 drawable ic_run
+drawable ic_run_black
 drawable ic_settings
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
@@ -2822,6 +2824,7 @@ id frost
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
+id globalAction_to_trackingFragment
 id gone
 id graph
 id graph_wrap

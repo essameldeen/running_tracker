@@ -4,6 +4,12 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/setupFragment">
 
+    <action
+        android:id="@+id/globalAction_to_trackingFragment"
+        app:destination="@+id/trackingFragment"
+        app:launchSingleTop="true"
+
+        />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.demo.runningtrackerapp.presentation.main.MainFragment"

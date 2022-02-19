@@ -16,6 +16,10 @@
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_tracking.xml"
     },
     {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_paus_black.xml.flat",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\drawable\\ic_paus_black.xml"
+    },
+    {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
@@ -26,6 +30,10 @@
     {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_run_black.xml.flat",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\drawable\\ic_run_black.xml"
     },
     {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\menu_bottom_nav_menu.xml.flat",

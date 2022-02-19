@@ -8,6 +8,7 @@ import com.demo.runningtrackerapp.presentation.setup.SetupFragment_GeneratedInje
 import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment_GeneratedInjector;
 import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules;
 import com.demo.runningtrackerapp.presentation.tracking.TrackingFragment_GeneratedInjector;
+import com.demo.runningtrackerapp.utils.TrackingService_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -138,9 +139,12 @@ public final class BaseApplication_HiltComponents {
       GeneratedComponent {
   }
 
-  @Subcomponent
+  @Subcomponent(
+      modules = ServiceModule.class
+  )
   @ServiceScoped
-  public abstract static class ServiceC implements ServiceComponent,
+  public abstract static class ServiceC implements TrackingService_GeneratedInjector,
+      ServiceComponent,
       GeneratedComponent {
     @Subcomponent.Builder
     abstract interface Builder extends ServiceComponentBuilder {

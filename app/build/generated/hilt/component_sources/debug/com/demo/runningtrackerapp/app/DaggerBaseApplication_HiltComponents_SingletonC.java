@@ -2,8 +2,10 @@
 package com.demo.runningtrackerapp.app;
 
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.view.View;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
@@ -20,6 +22,9 @@ import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel;
 import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.demo.runningtrackerapp.presentation.tracking.TrackingFragment;
 import com.demo.runningtrackerapp.repository.MainRepo;
+import com.demo.runningtrackerapp.utils.TrackingService;
+import com.demo.runningtrackerapp.utils.TrackingService_MembersInjector;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
@@ -595,11 +600,80 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     private final ServiceCImpl serviceCImpl = this;
 
+    private Provider<FusedLocationProviderClient> provideFusedLocationProvider;
+
+    private Provider<PendingIntent> providePendingIntentProvider;
+
+    private Provider<NotificationCompat.Builder> provideNotificationBuilderProvider;
+
     private ServiceCImpl(DaggerBaseApplication_HiltComponents_SingletonC singletonC,
         Service serviceParam) {
       this.singletonC = singletonC;
 
+      initialize(serviceParam);
 
+    }
+
+    private FusedLocationProviderClient fusedLocationProviderClient() {
+      return ServiceModule_ProvideFusedLocationProviderFactory.provideFusedLocationProvider(ApplicationContextModule_ProvideContextFactory.provideContext(singletonC.applicationContextModule));
+    }
+
+    private PendingIntent pendingIntent() {
+      return ServiceModule_ProvidePendingIntentFactory.providePendingIntent(ApplicationContextModule_ProvideContextFactory.provideContext(singletonC.applicationContextModule));
+    }
+
+    private NotificationCompat.Builder notificationCompatBuilder() {
+      return ServiceModule_ProvideNotificationBuilderFactory.provideNotificationBuilder(ApplicationContextModule_ProvideContextFactory.provideContext(singletonC.applicationContextModule), providePendingIntentProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final Service serviceParam) {
+      this.provideFusedLocationProvider = DoubleCheck.provider(new SwitchingProvider<FusedLocationProviderClient>(singletonC, serviceCImpl, 0));
+      this.providePendingIntentProvider = DoubleCheck.provider(new SwitchingProvider<PendingIntent>(singletonC, serviceCImpl, 2));
+      this.provideNotificationBuilderProvider = DoubleCheck.provider(new SwitchingProvider<NotificationCompat.Builder>(singletonC, serviceCImpl, 1));
+    }
+
+    @Override
+    public void injectTrackingService(TrackingService trackingService) {
+      injectTrackingService2(trackingService);
+    }
+
+    private TrackingService injectTrackingService2(TrackingService instance) {
+      TrackingService_MembersInjector.injectFusedLocationProviderClient(instance, provideFusedLocationProvider.get());
+      TrackingService_MembersInjector.injectNotificationBuilder(instance, provideNotificationBuilderProvider.get());
+      return instance;
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final DaggerBaseApplication_HiltComponents_SingletonC singletonC;
+
+      private final ServiceCImpl serviceCImpl;
+
+      private final int id;
+
+      SwitchingProvider(DaggerBaseApplication_HiltComponents_SingletonC singletonC,
+          ServiceCImpl serviceCImpl, int id) {
+        this.singletonC = singletonC;
+        this.serviceCImpl = serviceCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.google.android.gms.location.FusedLocationProviderClient 
+          return (T) serviceCImpl.fusedLocationProviderClient();
+
+          case 1: // androidx.core.app.NotificationCompat.Builder 
+          return (T) serviceCImpl.notificationCompatBuilder();
+
+          case 2: // android.app.PendingIntent 
+          return (T) serviceCImpl.pendingIntent();
+
+          default: throw new AssertionError(id);
+        }
+      }
     }
   }
 
