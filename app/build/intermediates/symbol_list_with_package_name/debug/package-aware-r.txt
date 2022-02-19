@@ -2554,6 +2554,8 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_add_black
 drawable ic_clock_black_24dp
+drawable ic_close
+drawable ic_delete
 drawable ic_graph
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2898,6 +2900,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id message
+id mi_cancelTracking
 id middle
 id mini
 id month_grid
@@ -3336,6 +3339,7 @@ layout text_view_without_line_height
 menu bottom_nav_menu
 menu example_menu
 menu example_menu2
+menu toolbar_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph

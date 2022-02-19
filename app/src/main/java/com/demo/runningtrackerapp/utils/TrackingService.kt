@@ -53,6 +53,7 @@ typealias  Polylines = MutableList<Polyline>
 class TrackingService : LifecycleService() {
 
     var isFirstRun = true
+    var isServiceKilled = false
     private var isTimerEnable = false
     private var lapTime = 0L
     private var totalTimeRun = 0L
@@ -115,6 +116,7 @@ class TrackingService : LifecycleService() {
                 }
                 ACTION_STOP_SERVICE -> {
                     Timber.d("Stopped service")
+                    stopService()
                 }
             }
         }
@@ -135,10 +137,27 @@ class TrackingService : LifecycleService() {
         startForeground(NOTIFICATION_ID, notificationBuilder.build())
 
         timeInSeconds.observe(this, {
-            val notification = currentNotification
-                .setContentText(TrackingUtil.getFormattedStopWatchTime(it * 1000L))
-            notificationManager.notify(NOTIFICATION_ID, notification.build())
+            if (!isServiceKilled) {
+                val notification = currentNotification
+                    .setContentText(TrackingUtil.getFormattedStopWatchTime(it * 1000L))
+                notificationManager.notify(NOTIFICATION_ID, notification.build())
+            }
+
         })
+    }
+
+    private fun pauseService() {
+        isTracking.postValue(false)
+        isTimerEnable = false
+    }
+
+    private fun stopService() {
+        isServiceKilled = true
+        isFirstRun = true
+        pauseService()
+        setInitialValues()
+        stopForeground(true)
+        stopSelf()
     }
 
     private fun startTimer() {
@@ -201,15 +220,13 @@ class TrackingService : LifecycleService() {
             isAccessible = true
             set(currentNotification, ArrayList<NotificationCompat.Action>())
         }
-        currentNotification = notificationBuilder
-            .addAction(R.drawable.ic_paus_black, notificationActionText, pendingIntent)
+        if (!isServiceKilled) {
+            currentNotification = notificationBuilder
+                .addAction(R.drawable.ic_paus_black, notificationActionText, pendingIntent)
 
-        notificationManager.notify(NOTIFICATION_ID, currentNotification.build())
-    }
+            notificationManager.notify(NOTIFICATION_ID, currentNotification.build())
+        }
 
-    private fun pauseService() {
-        isTracking.postValue(false)
-        isTimerEnable = false
     }
 
 
