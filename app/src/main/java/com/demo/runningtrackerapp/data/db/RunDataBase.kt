@@ -10,6 +10,6 @@ import com.demo.runningtrackerapp.data.db.RunDao
 
 @Database(entities = [Run::class], version = 1)
 @TypeConverters(Converters::class)
-abstract class DataBase : RoomDatabase() {
+abstract class RunDataBase : RoomDatabase() {
     abstract fun getRunDao(): RunDao
 }

@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 import com.demo.runningtrackerapp.MainActivity;
-import com.demo.runningtrackerapp.data.db.DataBase;
 import com.demo.runningtrackerapp.data.db.RunDao;
+import com.demo.runningtrackerapp.data.db.RunDataBase;
 import com.demo.runningtrackerapp.presentation.main.MainFragment;
 import com.demo.runningtrackerapp.presentation.main.MainViewModel;
 import com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules_KeyModule_ProvideFactory;
@@ -60,7 +60,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
   private final DaggerBaseApplication_HiltComponents_SingletonC singletonC = this;
 
-  private Provider<DataBase> provideDataBaseInstanceProvider;
+  private Provider<RunDataBase> provideDataBaseInstanceProvider;
 
   private Provider<RunDao> provideDaoProvider;
 
@@ -77,7 +77,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     return new Builder();
   }
 
-  private DataBase dataBase() {
+  private RunDataBase runDataBase() {
     return AppModule_ProvideDataBaseInstanceFactory.provideDataBaseInstance(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule));
   }
 
@@ -91,7 +91,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
   @SuppressWarnings("unchecked")
   private void initialize(final ApplicationContextModule applicationContextModuleParam) {
-    this.provideDataBaseInstanceProvider = DoubleCheck.provider(new SwitchingProvider<DataBase>(singletonC, 2));
+    this.provideDataBaseInstanceProvider = DoubleCheck.provider(new SwitchingProvider<RunDataBase>(singletonC, 2));
     this.provideDaoProvider = DoubleCheck.provider(new SwitchingProvider<RunDao>(singletonC, 1));
     this.provideRunRepoProvider = DoubleCheck.provider(new SwitchingProvider<MainRepo>(singletonC, 0));
   }
@@ -697,8 +697,8 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
         case 1: // com.demo.runningtrackerapp.data.db.RunDao 
         return (T) singletonC.runDao();
 
-        case 2: // com.demo.runningtrackerapp.data.db.DataBase 
-        return (T) singletonC.dataBase();
+        case 2: // com.demo.runningtrackerapp.data.db.RunDataBase 
+        return (T) singletonC.runDataBase();
 
         default: throw new AssertionError(id);
       }

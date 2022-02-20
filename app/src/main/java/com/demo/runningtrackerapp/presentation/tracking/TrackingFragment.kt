@@ -1,12 +1,16 @@
 package com.demo.runningtrackerapp.presentation.tracking
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.demo.runningtrackerapp.R
+import com.demo.runningtrackerapp.data.db.Run
 import com.demo.runningtrackerapp.databinding.FragmentTrackingBinding
+import com.demo.runningtrackerapp.presentation.main.MainViewModel
 import com.demo.runningtrackerapp.utils.Constants.ACTION_PAUSE_SERVICE
 import com.demo.runningtrackerapp.utils.Constants.ACTION_START_OR_RESUME_SERVICE
 import com.demo.runningtrackerapp.utils.Constants.ACTION_STOP_SERVICE
@@ -18,20 +22,25 @@ import com.demo.runningtrackerapp.utils.TrackingService
 import com.demo.runningtrackerapp.utils.TrackingUtil
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
+import kotlin.math.round
 
 @AndroidEntryPoint
 class TrackingFragment : Fragment() {
     private lateinit var viewBinding: FragmentTrackingBinding
     private var googleMap: GoogleMap? = null
+    private val viewModel: MainViewModel by viewModels()
 
     private var isTracking = false
     private var pathPoints = mutableListOf<Polyline>()
     private var currentTimeInMills = 0L
     private var menu: Menu? = null
-
+    private var weight = 80f
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -78,6 +87,10 @@ class TrackingFragment : Fragment() {
         viewBinding.btnToggleRun.setOnClickListener {
             toggleRun()
         }
+        viewBinding.btnFinishRun.setOnClickListener {
+            zoomOutToSeeAllTrackingPath()
+            endRunAndSaveInDB()
+        }
     }
 
     private fun initObservers() {
@@ -102,6 +115,63 @@ class TrackingFragment : Fragment() {
             requireContext().startService(it)
         }
 
+
+    private fun zoomOutToSeeAllTrackingPath() {
+
+        val bounds = LatLngBounds.Builder()
+        for (polyline in pathPoints) {
+            for (position in polyline) {
+                bounds.include(position)
+            }
+        }
+        googleMap?.moveCamera(
+            CameraUpdateFactory.newLatLngBounds(
+                bounds.build(),
+                viewBinding.mapView.width,
+                viewBinding.mapView.height,
+                (viewBinding.mapView.height * 0.05f).toInt()
+            )
+        )
+    }
+
+    private fun endRunAndSaveInDB() {
+        googleMap?.snapshot {
+            viewModel.insertRun(createRunModel(it))
+            showSnackBar()
+            stopRun()
+        }
+    }
+
+    private fun createRunModel(bitmap: Bitmap): Run {
+        var distanceInMeters = 0
+
+        for (polyline in pathPoints) {
+            distanceInMeters += TrackingUtil.calculatePolylineLength(polyline).toInt()
+        }
+        val avgSpeed =
+            round((distanceInMeters / 1000f) / (currentTimeInMills / 1000f / 60 / 60) * 10f) / 10f
+
+        val timeStamp = Calendar.getInstance().timeInMillis
+        val caloriesBurned = ((distanceInMeters / 1000f) * weight).toInt()
+
+        return Run(
+            bitmap,
+            timeStamp,
+            avgSpeed,
+            distanceInMeters,
+            currentTimeInMills,
+            caloriesBurned
+        )
+    }
+
+    private fun showSnackBar() {
+        Snackbar.make(
+            requireActivity().findViewById(R.id.rootView),
+            "Run Saved Successfully",
+            Snackbar.LENGTH_LONG
+        ).show()
+
+    }
 
     private fun addAllPolylines() {
         for (polyline in pathPoints) {

@@ -21,7 +21,7 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ConstraintLayout rootView_;
 
   @NonNull
   public final AppBarLayout appBarLayout;
@@ -33,19 +33,23 @@ public final class ActivityMainBinding implements ViewBinding {
   public final FrameLayout flFragment;
 
   @NonNull
+  public final ConstraintLayout rootView;
+
+  @NonNull
   public final MaterialToolbar toolbar;
 
   @NonNull
   public final MaterialTextView tvToolbarTitle;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView_,
       @NonNull AppBarLayout appBarLayout, @NonNull BottomNavigationView bottomNavigationView,
-      @NonNull FrameLayout flFragment, @NonNull MaterialToolbar toolbar,
-      @NonNull MaterialTextView tvToolbarTitle) {
-    this.rootView = rootView;
+      @NonNull FrameLayout flFragment, @NonNull ConstraintLayout rootView,
+      @NonNull MaterialToolbar toolbar, @NonNull MaterialTextView tvToolbarTitle) {
+    this.rootView_ = rootView_;
     this.appBarLayout = appBarLayout;
     this.bottomNavigationView = bottomNavigationView;
     this.flFragment = flFragment;
+    this.rootView = rootView;
     this.toolbar = toolbar;
     this.tvToolbarTitle = tvToolbarTitle;
   }
@@ -53,7 +57,7 @@ public final class ActivityMainBinding implements ViewBinding {
   @Override
   @NonNull
   public ConstraintLayout getRoot() {
-    return rootView;
+    return rootView_;
   }
 
   @NonNull
@@ -95,6 +99,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      ConstraintLayout rootView_ = (ConstraintLayout) rootView;
+
       id = R.id.toolbar;
       MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
@@ -108,7 +114,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, appBarLayout,
-          bottomNavigationView, flFragment, toolbar, tvToolbarTitle);
+          bottomNavigationView, flFragment, rootView_, toolbar, tvToolbarTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
