@@ -15,7 +15,7 @@ class MainRepoImp @Inject constructor(private val dao: RunDao) : MainRepo {
     }
 
     override fun getAllRunsSortedByDate(): LiveData<List<Run>> {
-        TODO("Not yet implemented")
+        return dao.getAllRunSortedByDate()
     }
 
     override fun getAllRunsSortedByDistance(): LiveData<List<Run>> {

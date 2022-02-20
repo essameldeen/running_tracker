@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.runningtrackerapp.databinding.FragmentMainBinding
 import com.demo.runningtrackerapp.utils.Constants.REQUEST_CODE_LOCATION_PERMISSION
 import com.demo.runningtrackerapp.utils.TrackingUtil
@@ -22,6 +23,7 @@ import pub.devrel.easypermissions.EasyPermissions
 class MainFragment : Fragment(), EasyPermissions.PermissionCallbacks {
     private val mainViewModel: MainViewModel by viewModels()
     private lateinit var viewBinding: FragmentMainBinding
+    private lateinit var runAdapter: RunAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +37,18 @@ class MainFragment : Fragment(), EasyPermissions.PermissionCallbacks {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requestPermission()
+        initView()
         initListener()
+        initObservers()
+    }
+
+    private fun initView() {
+        runAdapter = RunAdapter()
+        viewBinding.rvRuns.apply {
+            adapter = runAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+
+        }
     }
 
     private fun initListener() {
@@ -45,9 +58,18 @@ class MainFragment : Fragment(), EasyPermissions.PermissionCallbacks {
     }
 
 
+    private fun initObservers() {
+        mainViewModel.getRunSortedByDate.observe(viewLifecycleOwner, {
+            if(!it.isNullOrEmpty())
+            runAdapter.addList(it)
+        })
+    }
 
-    private  fun  requestPermission() {
-        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+    private fun requestPermission() {
+        if(TrackingUtil.hasLocationPermission(requireContext())) {
+            return
+        }
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             EasyPermissions.requestPermissions(
                 this,
                 "You need to accept location permissions to use this app.",
@@ -66,7 +88,9 @@ class MainFragment : Fragment(), EasyPermissions.PermissionCallbacks {
             )
         }
     }
-    override fun  onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
+
+    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
+
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
             AppSettingsDialog.Builder(this).build().show()
 
@@ -75,14 +99,16 @@ class MainFragment : Fragment(), EasyPermissions.PermissionCallbacks {
         }
 
     }
-    override fun  onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {}
-    override fun  onRequestPermissionsResult(
+
+    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {}
+    override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)    }
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
+    }
 
     private fun gotToTrackingFragment() {
         findNavController().navigate(MainFragmentDirections.navigateToTrackingFragment())
