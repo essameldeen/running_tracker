@@ -20,8 +20,10 @@ hilt_aggregated_deps/_com_demo_runningtrackerapp_presentation_staticitcs_Statist
  hilt_aggregated_deps._com_demo_runningtrackerapp_presentation_staticitcs_StatisticsFragment_GeneratedInjector
 com/demo/runningtrackerapp/databinding/FragmentStaticiticsBinding.java
  com.demo.runningtrackerapp.databinding.FragmentStaticiticsBinding
-hilt_aggregated_deps/_com_demo_runningtrackerapp_presentation_main_MainViewModel_HiltModules_BindsModule.java
- hilt_aggregated_deps._com_demo_runningtrackerapp_presentation_main_MainViewModel_HiltModules_BindsModule
+com/demo/runningtrackerapp/presentation/main/MainViewModel_HiltModules.java
+ com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules
+ com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules$BindsModule
+ com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules$KeyModule
 com/demo/runningtrackerapp/databinding/FragmentSettingsBinding.java
  com.demo.runningtrackerapp.databinding.FragmentSettingsBinding
 hilt_aggregated_deps/_com_demo_runningtrackerapp_app_BaseApplication_GeneratedInjector.java
@@ -54,15 +56,62 @@ com/demo/runningtrackerapp/presentation/settings/Hilt_SettingFragment.java
  com.demo.runningtrackerapp.presentation.settings.Hilt_SettingFragment
 com/demo/runningtrackerapp/databinding/FragmentMainBinding.java
  com.demo.runningtrackerapp.databinding.FragmentMainBinding
-com/demo/runningtrackerapp/BuildConfig.java
- com.demo.runningtrackerapp.BuildConfig
-com/demo/runningtrackerapp/presentation/staticitcs/StatisticsViewModel_Factory.java
- com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_Factory
+com/demo/runningtrackerapp/app/AppModule_ProvideDataBaseInstanceFactory.java
+ com.demo.runningtrackerapp.app.AppModule_ProvideDataBaseInstanceFactory
+com/demo/runningtrackerapp/presentation/main/MainViewModel_Factory.java
+ com.demo.runningtrackerapp.presentation.main.MainViewModel_Factory
 hilt_aggregated_deps/_com_demo_runningtrackerapp_presentation_main_MainViewModel_HiltModules_KeyModule.java
  hilt_aggregated_deps._com_demo_runningtrackerapp_presentation_main_MainViewModel_HiltModules_KeyModule
 com/demo/runningtrackerapp/presentation/staticitcs/StatisticsViewModel_HiltModules_KeyModule_ProvideFactory.java
  com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules_KeyModule_ProvideFactory
  com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
+com/demo/runningtrackerapp/presentation/setup/Hilt_SetupFragment.java
+ com.demo.runningtrackerapp.presentation.setup.Hilt_SetupFragment
+com/demo/runningtrackerapp/app/ServiceModule_ProvidePendingIntentFactory.java
+ com.demo.runningtrackerapp.app.ServiceModule_ProvidePendingIntentFactory
+com/demo/runningtrackerapp/app/AppModule_ProvideRunRepoFactory.java
+ com.demo.runningtrackerapp.app.AppModule_ProvideRunRepoFactory
+com/demo/runningtrackerapp/presentation/tracking/Hilt_TrackingFragment.java
+ com.demo.runningtrackerapp.presentation.tracking.Hilt_TrackingFragment
+com/demo/runningtrackerapp/app/BaseApplication_GeneratedInjector.java
+ com.demo.runningtrackerapp.app.BaseApplication_GeneratedInjector
+hilt_aggregated_deps/_com_demo_runningtrackerapp_utils_TrackingService_GeneratedInjector.java
+ hilt_aggregated_deps._com_demo_runningtrackerapp_utils_TrackingService_GeneratedInjector
+com/demo/runningtrackerapp/repository/MainRepoImp_Factory.java
+ com.demo.runningtrackerapp.repository.MainRepoImp_Factory
+com/demo/runningtrackerapp/presentation/tracking/TrackingFragment_GeneratedInjector.java
+ com.demo.runningtrackerapp.presentation.tracking.TrackingFragment_GeneratedInjector
+com/demo/runningtrackerapp/databinding/FragmentTrackingBinding.java
+ com.demo.runningtrackerapp.databinding.FragmentTrackingBinding
+com/demo/runningtrackerapp/presentation/staticitcs/StatisticsFragment_GeneratedInjector.java
+ com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment_GeneratedInjector
+com/demo/runningtrackerapp/utils/TrackingService_MembersInjector.java
+ com.demo.runningtrackerapp.utils.TrackingService_MembersInjector
+com/demo/runningtrackerapp/presentation/staticitcs/StatisticsViewModel_HiltModules.java
+ com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules
+ com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules$BindsModule
+ com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules$KeyModule
+com/demo/runningtrackerapp/presentation/staticitcs/StatisticsViewModel_Factory.java
+ com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_Factory
+com/demo/runningtrackerapp/data/db/RunDataBase_Impl.java
+ com.demo.runningtrackerapp.data.db.RunDataBase_Impl
+ com.demo.runningtrackerapp.data.db.RunDataBase_Impl$1
+com/demo/runningtrackerapp/BuildConfig.java
+ com.demo.runningtrackerapp.BuildConfig
+com/demo/runningtrackerapp/app/AppModule_ProvideDaoFactory.java
+ com.demo.runningtrackerapp.app.AppModule_ProvideDaoFactory
+com/demo/runningtrackerapp/databinding/ItemRunBinding.java
+ com.demo.runningtrackerapp.databinding.ItemRunBinding
+com/demo/runningtrackerapp/presentation/main/Hilt_MainFragment.java
+ com.demo.runningtrackerapp.presentation.main.Hilt_MainFragment
+com/demo/runningtrackerapp/presentation/main/MainFragment_GeneratedInjector.java
+ com.demo.runningtrackerapp.presentation.main.MainFragment_GeneratedInjector
+hilt_aggregated_deps/_com_demo_runningtrackerapp_presentation_main_MainViewModel_HiltModules_BindsModule.java
+ hilt_aggregated_deps._com_demo_runningtrackerapp_presentation_main_MainViewModel_HiltModules_BindsModule
+com/demo/runningtrackerapp/app/ServiceModule_ProvideFusedLocationProviderFactory.java
+ com.demo.runningtrackerapp.app.ServiceModule_ProvideFusedLocationProviderFactory
+com/demo/runningtrackerapp/utils/Hilt_TrackingService.java
+ com.demo.runningtrackerapp.utils.Hilt_TrackingService
 com/demo/runningtrackerapp/data/db/RunDao_Impl.java
  com.demo.runningtrackerapp.data.db.RunDao_Impl
  com.demo.runningtrackerapp.data.db.RunDao_Impl$1
@@ -77,52 +126,3 @@ com/demo/runningtrackerapp/data/db/RunDao_Impl.java
  com.demo.runningtrackerapp.data.db.RunDao_Impl$7
  com.demo.runningtrackerapp.data.db.RunDao_Impl$8
  com.demo.runningtrackerapp.data.db.RunDao_Impl$9
-com/demo/runningtrackerapp/presentation/setup/Hilt_SetupFragment.java
- com.demo.runningtrackerapp.presentation.setup.Hilt_SetupFragment
-com/demo/runningtrackerapp/app/ServiceModule_ProvidePendingIntentFactory.java
- com.demo.runningtrackerapp.app.ServiceModule_ProvidePendingIntentFactory
-com/demo/runningtrackerapp/app/ServiceModule_ProvideFusedLocationProviderFactory.java
- com.demo.runningtrackerapp.app.ServiceModule_ProvideFusedLocationProviderFactory
-com/demo/runningtrackerapp/databinding/ItemRunBinding.java
- com.demo.runningtrackerapp.databinding.ItemRunBinding
-com/demo/runningtrackerapp/app/BaseApplication_GeneratedInjector.java
- com.demo.runningtrackerapp.app.BaseApplication_GeneratedInjector
-hilt_aggregated_deps/_com_demo_runningtrackerapp_utils_TrackingService_GeneratedInjector.java
- hilt_aggregated_deps._com_demo_runningtrackerapp_utils_TrackingService_GeneratedInjector
-com/demo/runningtrackerapp/utils/Hilt_TrackingService.java
- com.demo.runningtrackerapp.utils.Hilt_TrackingService
-com/demo/runningtrackerapp/data/db/RunDataBase_Impl.java
- com.demo.runningtrackerapp.data.db.RunDataBase_Impl
- com.demo.runningtrackerapp.data.db.RunDataBase_Impl$1
-com/demo/runningtrackerapp/databinding/FragmentTrackingBinding.java
- com.demo.runningtrackerapp.databinding.FragmentTrackingBinding
-com/demo/runningtrackerapp/presentation/staticitcs/StatisticsFragment_GeneratedInjector.java
- com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment_GeneratedInjector
-com/demo/runningtrackerapp/utils/TrackingService_MembersInjector.java
- com.demo.runningtrackerapp.utils.TrackingService_MembersInjector
-com/demo/runningtrackerapp/presentation/staticitcs/StatisticsViewModel_HiltModules.java
- com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules
- com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules$BindsModule
- com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules$KeyModule
-com/demo/runningtrackerapp/presentation/main/MainViewModel_Factory.java
- com.demo.runningtrackerapp.presentation.main.MainViewModel_Factory
-com/demo/runningtrackerapp/repository/MainRepoImp_Factory.java
- com.demo.runningtrackerapp.repository.MainRepoImp_Factory
-com/demo/runningtrackerapp/presentation/tracking/TrackingFragment_GeneratedInjector.java
- com.demo.runningtrackerapp.presentation.tracking.TrackingFragment_GeneratedInjector
-com/demo/runningtrackerapp/app/AppModule_ProvideRunRepoFactory.java
- com.demo.runningtrackerapp.app.AppModule_ProvideRunRepoFactory
-com/demo/runningtrackerapp/presentation/tracking/Hilt_TrackingFragment.java
- com.demo.runningtrackerapp.presentation.tracking.Hilt_TrackingFragment
-com/demo/runningtrackerapp/presentation/main/MainViewModel_HiltModules.java
- com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules
- com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules$BindsModule
- com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules$KeyModule
-com/demo/runningtrackerapp/app/AppModule_ProvideDaoFactory.java
- com.demo.runningtrackerapp.app.AppModule_ProvideDaoFactory
-com/demo/runningtrackerapp/presentation/main/Hilt_MainFragment.java
- com.demo.runningtrackerapp.presentation.main.Hilt_MainFragment
-com/demo/runningtrackerapp/presentation/main/MainFragment_GeneratedInjector.java
- com.demo.runningtrackerapp.presentation.main.MainFragment_GeneratedInjector
-com/demo/runningtrackerapp/app/AppModule_ProvideDataBaseInstanceFactory.java
- com.demo.runningtrackerapp.app.AppModule_ProvideDataBaseInstanceFactory
