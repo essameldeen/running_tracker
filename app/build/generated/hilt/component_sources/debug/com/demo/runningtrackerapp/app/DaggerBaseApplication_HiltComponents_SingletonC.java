@@ -4,6 +4,7 @@ package com.demo.runningtrackerapp.app;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.SharedPreferences;
 import android.view.View;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
@@ -16,11 +17,14 @@ import com.demo.runningtrackerapp.presentation.main.MainFragment;
 import com.demo.runningtrackerapp.presentation.main.MainViewModel;
 import com.demo.runningtrackerapp.presentation.main.MainViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.demo.runningtrackerapp.presentation.settings.SettingFragment;
+import com.demo.runningtrackerapp.presentation.settings.SettingFragment_MembersInjector;
 import com.demo.runningtrackerapp.presentation.setup.SetupFragment;
+import com.demo.runningtrackerapp.presentation.setup.SetupFragment_MembersInjector;
 import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsFragment;
 import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel;
 import com.demo.runningtrackerapp.presentation.staticitcs.StatisticsViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.demo.runningtrackerapp.presentation.tracking.TrackingFragment;
+import com.demo.runningtrackerapp.presentation.tracking.TrackingFragment_MembersInjector;
 import com.demo.runningtrackerapp.repository.MainRepo;
 import com.demo.runningtrackerapp.utils.TrackingService;
 import com.demo.runningtrackerapp.utils.TrackingService_MembersInjector;
@@ -60,6 +64,12 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
   private final DaggerBaseApplication_HiltComponents_SingletonC singletonC = this;
 
+  private Provider<SharedPreferences> provideSharedPreferenceProvider;
+
+  private Provider<Boolean> provideFirstToggleProvider;
+
+  private Provider<Float> provideWeightProvider;
+
   private Provider<RunDataBase> provideDataBaseInstanceProvider;
 
   private Provider<RunDao> provideDaoProvider;
@@ -77,6 +87,18 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     return new Builder();
   }
 
+  private SharedPreferences sharedPreferences() {
+    return AppModule_ProvideSharedPreferenceFactory.provideSharedPreference(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule));
+  }
+
+  private boolean b() {
+    return AppModule.INSTANCE.provideFirstToggle(provideSharedPreferenceProvider.get());
+  }
+
+  private float f() {
+    return AppModule.INSTANCE.provideWeight(provideSharedPreferenceProvider.get());
+  }
+
   private RunDataBase runDataBase() {
     return AppModule_ProvideDataBaseInstanceFactory.provideDataBaseInstance(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule));
   }
@@ -91,9 +113,12 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
   @SuppressWarnings("unchecked")
   private void initialize(final ApplicationContextModule applicationContextModuleParam) {
-    this.provideDataBaseInstanceProvider = DoubleCheck.provider(new SwitchingProvider<RunDataBase>(singletonC, 2));
-    this.provideDaoProvider = DoubleCheck.provider(new SwitchingProvider<RunDao>(singletonC, 1));
-    this.provideRunRepoProvider = DoubleCheck.provider(new SwitchingProvider<MainRepo>(singletonC, 0));
+    this.provideSharedPreferenceProvider = DoubleCheck.provider(new SwitchingProvider<SharedPreferences>(singletonC, 0));
+    this.provideFirstToggleProvider = DoubleCheck.provider(new SwitchingProvider<Boolean>(singletonC, 1));
+    this.provideWeightProvider = DoubleCheck.provider(new SwitchingProvider<Float>(singletonC, 2));
+    this.provideDataBaseInstanceProvider = DoubleCheck.provider(new SwitchingProvider<RunDataBase>(singletonC, 5));
+    this.provideDaoProvider = DoubleCheck.provider(new SwitchingProvider<RunDao>(singletonC, 4));
+    this.provideRunRepoProvider = DoubleCheck.provider(new SwitchingProvider<MainRepo>(singletonC, 3));
   }
 
   @Override
@@ -377,10 +402,12 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public void injectSettingFragment(SettingFragment settingFragment) {
+      injectSettingFragment2(settingFragment);
     }
 
     @Override
     public void injectSetupFragment(SetupFragment setupFragment) {
+      injectSetupFragment2(setupFragment);
     }
 
     @Override
@@ -389,6 +416,7 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
 
     @Override
     public void injectTrackingFragment(TrackingFragment trackingFragment) {
+      injectTrackingFragment2(trackingFragment);
     }
 
     @Override
@@ -399,6 +427,22 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     @Override
     public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
       return new ViewWithFragmentCBuilder(singletonC, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+
+    private SettingFragment injectSettingFragment2(SettingFragment instance) {
+      SettingFragment_MembersInjector.injectSharedPref(instance, singletonC.provideSharedPreferenceProvider.get());
+      return instance;
+    }
+
+    private SetupFragment injectSetupFragment2(SetupFragment instance) {
+      SetupFragment_MembersInjector.injectSharedPref(instance, singletonC.provideSharedPreferenceProvider.get());
+      SetupFragment_MembersInjector.injectSetFirstAppOpen(instance, singletonC.provideFirstToggleProvider.get());
+      return instance;
+    }
+
+    private TrackingFragment injectTrackingFragment2(TrackingFragment instance) {
+      TrackingFragment_MembersInjector.injectSetWeight(instance, singletonC.provideWeightProvider.get());
+      return instance;
     }
   }
 
@@ -691,13 +735,22 @@ public final class DaggerBaseApplication_HiltComponents_SingletonC extends BaseA
     @Override
     public T get() {
       switch (id) {
-        case 0: // com.demo.runningtrackerapp.repository.MainRepo 
+        case 0: // android.content.SharedPreferences 
+        return (T) singletonC.sharedPreferences();
+
+        case 1: // java.lang.Boolean 
+        return (T) (Boolean) singletonC.b();
+
+        case 2: // java.lang.Float 
+        return (T) (Float) singletonC.f();
+
+        case 3: // com.demo.runningtrackerapp.repository.MainRepo 
         return (T) singletonC.mainRepo();
 
-        case 1: // com.demo.runningtrackerapp.data.db.RunDao 
+        case 4: // com.demo.runningtrackerapp.data.db.RunDao 
         return (T) singletonC.runDao();
 
-        case 2: // com.demo.runningtrackerapp.data.db.RunDataBase 
+        case 5: // com.demo.runningtrackerapp.data.db.RunDataBase 
         return (T) singletonC.runDataBase();
 
         default: throw new AssertionError(id);
