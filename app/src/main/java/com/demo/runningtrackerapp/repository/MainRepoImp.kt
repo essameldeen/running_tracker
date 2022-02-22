@@ -21,10 +21,7 @@ class MainRepoImp @Inject constructor(private val dao: RunDao) : MainRepo {
   override fun getAllRunsSortedByTimeInMillis(): LiveData<List<Run>> =
     dao.getAllRunSortedByTimeInMillis()
 
-  override fun getAllRunsSortedByAvgSpeed(): LiveData<List<Run>> {
-    TODO("Not yet implemented")
-
-  }
+  override fun getAllRunsSortedByAvgSpeed(): LiveData<List<Run>> = dao.getAllRunSortedByAvgSpeed()
 
   override fun getAllRunsSortedByCaloriesBurned(): LiveData<List<Run>> =
     dao.getAllRunSortedByCaloriesBurned()

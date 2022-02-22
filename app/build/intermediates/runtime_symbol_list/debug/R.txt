@@ -2705,6 +2705,7 @@ int id auto 0x7f090056
 int id autoComplete 0x7f090057
 int id autoCompleteToEnd 0x7f090058
 int id autoCompleteToStart 0x7f090059
+int id barChart 0x7f09021c
 int id barrier 0x7f09005a
 int id baseline 0x7f09005b
 int id beginOnFirstDraw 0x7f09005c
@@ -3116,9 +3117,11 @@ int id tvAverageSpeed 0x7f0901f1
 int id tvAverageSpeedInfo 0x7f0901f2
 int id tvAvgSpeed 0x7f0901f3
 int id tvCalories 0x7f0901f4
+int id tvCaloriesBurned 0x7f09021d
 int id tvContinue 0x7f0901f5
 int id tvDate 0x7f0901f6
 int id tvDistance 0x7f0901f7
+int id tvDuration 0x7f09021e
 int id tvFilterBy 0x7f0901f8
 int id tvLetsGo 0x7f0901f9
 int id tvTime 0x7f0901fa
@@ -3268,6 +3271,7 @@ int layout item_run 0x7f0c0032
 int layout m3_alert_dialog 0x7f0c0033
 int layout m3_alert_dialog_actions 0x7f0c0034
 int layout m3_alert_dialog_title 0x7f0c0035
+int layout marker_view 0x7f0c007a
 int layout material_chip_input_combo 0x7f0c0036
 int layout material_clock_display 0x7f0c0037
 int layout material_clock_display_divider 0x7f0c0038

@@ -43,6 +43,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.4.0] C:\Users\Hp\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.4.0] C:\Users\Hp\.gradle\caches\transforms-3\a2a9df43fa03123b715169980f039d78\transformed\jetified-lifecycle-livedata-core-ktx-2.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transforms-3\c10ee0cebcc80c5fe93f225834d5de83\transformed\room-runtime-2.4.1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\Hp\.gradle\caches\transforms-3\732858577a0fe6e816b3a7db29b8785d\transformed\jetified-timber-4.7.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Hp\.gradle\caches\transforms-3\990daff65f584a0b1293ad085e375f91\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] C:\Users\Hp\.gradle\caches\transforms-3\ff608ba4895469f4b5c6b789ce50f074\transformed\jetified-appcompat-resources-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\9da824576ad68dd05d998f3e36b5aa6c\transformed\jetified-emoji2-views-helper-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\5015ebd570bbc81a4f89ac4dfb462583\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:17:1-37:12
@@ -287,6 +288,8 @@ MERGED from [androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transf
 MERGED from [androidx.room:room-runtime:2.4.1] C:\Users\Hp\.gradle\caches\transforms-3\c10ee0cebcc80c5fe93f225834d5de83\transformed\room-runtime-2.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\Hp\.gradle\caches\transforms-3\732858577a0fe6e816b3a7db29b8785d\transformed\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\Hp\.gradle\caches\transforms-3\732858577a0fe6e816b3a7db29b8785d\transformed\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Hp\.gradle\caches\transforms-3\990daff65f584a0b1293ad085e375f91\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Hp\.gradle\caches\transforms-3\990daff65f584a0b1293ad085e375f91\transformed\jetified-MPAndroidChart-v3.1.0\AndroidManifest.xml:16:5-18:41
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] C:\Users\Hp\.gradle\caches\transforms-3\ff608ba4895469f4b5c6b789ce50f074\transformed\jetified-appcompat-resources-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.4.1] C:\Users\Hp\.gradle\caches\transforms-3\ff608ba4895469f4b5c6b789ce50f074\transformed\jetified-appcompat-resources-1.4.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] C:\Users\Hp\.gradle\caches\transforms-3\9da824576ad68dd05d998f3e36b5aa6c\transformed\jetified-emoji2-views-helper-1.0.0\AndroidManifest.xml:20:5-22:41

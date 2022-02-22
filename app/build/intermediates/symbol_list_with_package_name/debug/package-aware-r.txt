@@ -2706,6 +2706,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id barChart
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3117,9 +3118,11 @@ id tvAverageSpeed
 id tvAverageSpeedInfo
 id tvAvgSpeed
 id tvCalories
+id tvCaloriesBurned
 id tvContinue
 id tvDate
 id tvDistance
+id tvDuration
 id tvFilterBy
 id tvLetsGo
 id tvTime
@@ -3269,6 +3272,7 @@ layout item_run
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
+layout marker_view
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

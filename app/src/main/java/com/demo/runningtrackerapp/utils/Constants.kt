@@ -1,6 +1,7 @@
 package com.demo.runningtrackerapp.utils
 
 import android.graphics.Color
+import com.demo.runningtrackerapp.R
 
 
 object Constants {
@@ -27,4 +28,5 @@ object Constants {
   const val KEY_FIRST_TIME_TOGGLE = "KEY_FIRST_TIME_TOGGLE"
   const val KEY_NAME = "KEY_NAME"
   const val KEY_WEIGHT = "KEY_WEIGHT"
+  const val MARKER_VIEW = R.layout.marker_view
 }
