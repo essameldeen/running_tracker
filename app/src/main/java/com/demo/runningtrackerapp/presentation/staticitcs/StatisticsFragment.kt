@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.demo.runningtrackerapp.R
-import com.demo.runningtrackerapp.data.db.Run
+import com.demo.runningtrackerapp.data.model.Run
 import com.demo.runningtrackerapp.databinding.FragmentStaticiticsBinding
 import com.demo.runningtrackerapp.utils.Constants.MARKER_VIEW
 import com.demo.runningtrackerapp.utils.CustomMarkerView

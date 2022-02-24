@@ -96,7 +96,7 @@ public final class RunDataBase_Impl extends RunDataBase {
         final TableInfo _infoRunningTable = new TableInfo("running_table", _columnsRunningTable, _foreignKeysRunningTable, _indicesRunningTable);
         final TableInfo _existingRunningTable = TableInfo.read(_db, "running_table");
         if (! _infoRunningTable.equals(_existingRunningTable)) {
-          return new RoomOpenHelper.ValidationResult(false, "running_table(com.demo.runningtrackerapp.data.db.Run).\n"
+          return new RoomOpenHelper.ValidationResult(false, "running_table(com.demo.runningtrackerapp.data.model.Run).\n"
                   + " Expected:\n" + _infoRunningTable + "\n"
                   + " Found:\n" + _existingRunningTable);
         }

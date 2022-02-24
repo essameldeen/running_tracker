@@ -1,7 +1,7 @@
 package com.demo.runningtrackerapp.repository
 
 import androidx.lifecycle.LiveData
-import com.demo.runningtrackerapp.data.db.Run
+import com.demo.runningtrackerapp.data.model.Run
 import com.demo.runningtrackerapp.data.db.RunDao
 import javax.inject.Inject
 

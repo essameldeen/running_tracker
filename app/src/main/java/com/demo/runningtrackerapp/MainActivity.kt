@@ -20,35 +20,38 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
 
-        goToTrackingFragment(intent)
+    goToTrackingFragment(intent)
 
-        setSupportActionBar(toolbar)
-        bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
-        navHostFragment.findNavController().addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.settingFragment, R.id.mainFragment, R.id.statisticsFragment ->
-                    bottomNavigationView.visibility = View.VISIBLE
-                else -> bottomNavigationView.visibility = View.GONE
-            }
-
-        }
-
-    }
-
-    // when activity destroyed and clicked in notification
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-        goToTrackingFragment(intent)
-    }
-
-    private fun goToTrackingFragment(intent: Intent?) {
-        if (intent?.action == ACTION_SHOW_TRACKING_FRAGMENT) {
-            navHostFragment.findNavController().navigate(R.id.globalAction_to_trackingFragment)
-        }
+    setSupportActionBar(toolbar)
+    bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
+    bottomNavigationView.setOnNavigationItemReselectedListener {}
+    navHostFragment.findNavController().addOnDestinationChangedListener { _, destination, _ ->
+      when (destination.id) {
+        R.id.settingFragment, R.id.mainFragment, R.id.statisticsFragment ->
+          bottomNavigationView.visibility = View.VISIBLE
+        else -> bottomNavigationView.visibility = View.GONE
+      }
 
     }
+
+  }
+
+
+
+  // when activity destroyed and clicked in notification
+  override fun onNewIntent(intent: Intent?) {
+    super.onNewIntent(intent)
+    goToTrackingFragment(intent)
+  }
+
+  private fun goToTrackingFragment(intent: Intent?) {
+    if (intent?.action == ACTION_SHOW_TRACKING_FRAGMENT) {
+      navHostFragment.findNavController().navigate(R.id.globalAction_to_trackingFragment)
+    }
+
+  }
 }

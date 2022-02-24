@@ -6,9 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.*
 import com.bumptech.glide.Glide
 import com.demo.runningtrackerapp.R
-import com.demo.runningtrackerapp.data.db.Run
+import com.demo.runningtrackerapp.data.model.Run
 import com.demo.runningtrackerapp.utils.TrackingUtil
-import kotlinx.android.synthetic.main.fragment_staticitics.view.*
 import kotlinx.android.synthetic.main.item_run.view.*
 import java.text.SimpleDateFormat
 import java.util.*

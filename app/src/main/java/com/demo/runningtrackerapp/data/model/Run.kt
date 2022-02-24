@@ -1,4 +1,4 @@
-package com.demo.runningtrackerapp.data.db
+package com.demo.runningtrackerapp.data.model
 
 import android.graphics.Bitmap
 import androidx.room.Entity

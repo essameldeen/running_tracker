@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\marker_view.xml",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\marker_view.xml"
+    },
+    {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_main.xml",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\fragment_main.xml"
     },

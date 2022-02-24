@@ -8,12 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.demo.runningtrackerapp.R
-import com.demo.runningtrackerapp.data.db.Run
+import com.demo.runningtrackerapp.data.model.Run
 import com.demo.runningtrackerapp.databinding.FragmentTrackingBinding
 import com.demo.runningtrackerapp.presentation.main.MainViewModel
+import com.demo.runningtrackerapp.utils.CancelDialogFragment
 import com.demo.runningtrackerapp.utils.Constants.ACTION_PAUSE_SERVICE
 import com.demo.runningtrackerapp.utils.Constants.ACTION_START_OR_RESUME_SERVICE
 import com.demo.runningtrackerapp.utils.Constants.ACTION_STOP_SERVICE
+import com.demo.runningtrackerapp.utils.Constants.CANCEL_TRACKING_DIALOG
 import com.demo.runningtrackerapp.utils.Constants.MAP_ZOOM
 import com.demo.runningtrackerapp.utils.Constants.POLYLINE_COLOR
 import com.demo.runningtrackerapp.utils.Constants.POLYLINE_WIDTH
@@ -57,6 +59,7 @@ class TrackingFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    setDialogListener(savedInstanceState)
     viewBinding.mapView.onCreate(savedInstanceState)
     viewBinding.mapView.getMapAsync {
       googleMap = it
@@ -64,6 +67,18 @@ class TrackingFragment : Fragment() {
     }
     intiListener()
     initObservers()
+  }
+
+  // when screen rotate reassign the listener
+  private fun setDialogListener(savedInstanceState: Bundle?) {
+    if (savedInstanceState != null) {
+      val dialogFragment = parentFragmentManager.findFragmentByTag(CANCEL_TRACKING_DIALOG)
+        as CancelDialogFragment?
+
+      dialogFragment?.setListener {
+        stopRun()
+      }
+    }
   }
 
   override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -215,10 +230,10 @@ class TrackingFragment : Fragment() {
 
   private fun updateTracking(isTracking: Boolean) {
     this.isTracking = isTracking
-    if (!isTracking) {
+    if (!isTracking && currentTimeInMills > 0L) {
       viewBinding.btnToggleRun.text = "START"
       viewBinding.btnFinishRun.visibility = View.VISIBLE
-    } else {
+    } else if (isTracking) {
       viewBinding.btnToggleRun.text = "STOP"
       viewBinding.btnFinishRun.visibility = View.GONE
       makeMenuVisible()
@@ -235,18 +250,12 @@ class TrackingFragment : Fragment() {
   }
 
   private fun showCancelDialog() {
-    val dialog = MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
-      .setTitle("Cancel The Run ?")
-      .setMessage("Are you sure to cancel the current run and delete all its data ?")
-      .setIcon(R.drawable.ic_delete)
-      .setPositiveButton("Yes") { _, _ ->
+    CancelDialogFragment().apply {
+      setListener {
         stopRun()
-
-      }.setNegativeButton("No") { dialogInterface, _ ->
-        dialogInterface.cancel()
       }
-      .create()
-    dialog.show()
+
+    }.show(parentFragmentManager, CANCEL_TRACKING_DIALOG)
   }
 
   private fun makeMenuVisible() {
@@ -254,6 +263,7 @@ class TrackingFragment : Fragment() {
   }
 
   private fun stopRun() {
+    viewBinding.tvTimer.text = "00:00:00:00"
     sendCommandToService(ACTION_STOP_SERVICE)
     findNavController().navigate(TrackingFragmentDirections.navigateToMainFragment())
   }
@@ -271,6 +281,7 @@ class TrackingFragment : Fragment() {
 
   override fun onStop() {
     super.onStop()
+
     viewBinding.mapView.onStop()
 
   }

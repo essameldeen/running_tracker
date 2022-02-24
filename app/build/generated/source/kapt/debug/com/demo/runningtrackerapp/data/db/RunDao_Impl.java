@@ -11,6 +11,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.demo.runningtrackerapp.data.model.Run;
 import java.lang.Class;
 import java.lang.Exception;
 import java.lang.Float;
@@ -299,6 +300,66 @@ public final class RunDao_Impl implements RunDao {
   @Override
   public LiveData<List<Run>> getAllRunSortedByDistance() {
     final String _sql = "SELECT * FROM running_table ORDER BY distanceInMeter DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[]{"running_table"}, false, new Callable<List<Run>>() {
+      @Override
+      public List<Run> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
+          final int _cursorIndexOfTimeStamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timeStamp");
+          final int _cursorIndexOfAvgSpeedInKMH = CursorUtil.getColumnIndexOrThrow(_cursor, "avgSpeedInKMH");
+          final int _cursorIndexOfDistanceInMeter = CursorUtil.getColumnIndexOrThrow(_cursor, "distanceInMeter");
+          final int _cursorIndexOfTimeMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "timeMillis");
+          final int _cursorIndexOfCaloriesBurned = CursorUtil.getColumnIndexOrThrow(_cursor, "caloriesBurned");
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final List<Run> _result = new ArrayList<Run>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final Run _item;
+            final Bitmap _tmpImage;
+            final byte[] _tmp;
+            if (_cursor.isNull(_cursorIndexOfImage)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getBlob(_cursorIndexOfImage);
+            }
+            _tmpImage = __converters.fromByteArrayToBitmap(_tmp);
+            final long _tmpTimeStamp;
+            _tmpTimeStamp = _cursor.getLong(_cursorIndexOfTimeStamp);
+            final float _tmpAvgSpeedInKMH;
+            _tmpAvgSpeedInKMH = _cursor.getFloat(_cursorIndexOfAvgSpeedInKMH);
+            final int _tmpDistanceInMeter;
+            _tmpDistanceInMeter = _cursor.getInt(_cursorIndexOfDistanceInMeter);
+            final long _tmpTimeMillis;
+            _tmpTimeMillis = _cursor.getLong(_cursorIndexOfTimeMillis);
+            final int _tmpCaloriesBurned;
+            _tmpCaloriesBurned = _cursor.getInt(_cursorIndexOfCaloriesBurned);
+            _item = new Run(_tmpImage,_tmpTimeStamp,_tmpAvgSpeedInKMH,_tmpDistanceInMeter,_tmpTimeMillis,_tmpCaloriesBurned);
+            final Integer _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getInt(_cursorIndexOfId);
+            }
+            _item.setId(_tmpId);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<List<Run>> getAllRunSortedByAvgSpeed() {
+    final String _sql = "SELECT * FROM running_table ORDER BY avgSpeedInKMH DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return __db.getInvalidationTracker().createLiveData(new String[]{"running_table"}, false, new Callable<List<Run>>() {
       @Override

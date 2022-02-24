@@ -1,7 +1,7 @@
 package com.demo.runningtrackerapp.utils
 
 import android.content.Context
-import com.demo.runningtrackerapp.data.db.Run
+import com.demo.runningtrackerapp.data.model.Run
 import com.github.mikephil.charting.components.MarkerView
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.highlight.Highlight

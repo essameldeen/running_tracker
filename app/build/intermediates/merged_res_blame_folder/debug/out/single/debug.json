@@ -96,6 +96,10 @@
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\layout_marker_view.xml.flat",
+        "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\layout\\marker_view.xml"
+    },
+    {
         "merged": "E:\\smartzone\\runningTrackerApp\\app\\build\\intermediates\\merged_res\\debug\\navigation_nav_graph.xml.flat",
         "source": "E:\\smartzone\\runningTrackerApp\\app\\src\\main\\res\\navigation\\nav_graph.xml"
     },

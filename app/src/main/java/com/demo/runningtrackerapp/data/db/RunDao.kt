@@ -2,6 +2,7 @@ package com.demo.runningtrackerapp.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.demo.runningtrackerapp.data.model.Run
 
 @Dao
 interface RunDao {
