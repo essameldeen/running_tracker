@@ -14,8 +14,6 @@ This Application demo for Running and analytics
 * Database: Room Database .
 * hilt for di (Dependency Injection).
 * Kotlin Coroutines.
-* Google maps 
-* Background service 
-* Notification 
-
-
+* Google maps .
+* Background service. 
+* Notification. 
