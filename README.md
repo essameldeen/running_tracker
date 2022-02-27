@@ -3,12 +3,12 @@ This Application demo for Running and analytics
 
 # Technology
 * Clean Architecture: 3 Layers (Presentation, Domain, Data) Layers.
-* Presentation Layer:
+# Presentation Layer:
 * mvvm Presentation Architecture Pattern.
 * view Model
-* Domain Layer:
+# Domain Layer:
 * Repository Interfaces.
-* Data Layer:
+# Data Layer:
 * Repository Implementation.
 * Models.
 * Database: Room Database .
